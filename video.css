@@ -1,0 +1,327 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #0f0f0f;
+    color: whitesmoke;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    
+}
+
+#main_grid {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 61px auto;
+}
+
+/* --------- Top Navigation --------- */
+#top_part {
+    width: 100%;
+    height: 61px;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    background-color: #181818;
+    border-bottom: 1px solid #222;
+    /* border: 1px solid red; */
+}
+#logo_cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Logo Section */
+#logo {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 10px;
+}
+
+#logo img {
+    margin-left: 15px;
+    width: 40px;
+    height: auto;
+    box-sizing: border-box;
+}
+
+#logoText {
+    margin-left: 5px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Search + Right Part */
+#top_nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    
+}
+
+/* Center Search */
+#center_part {
+    height: 100%;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    /* border: 1px solid red; */
+}
+
+#search {
+    width: 530px;
+    height: 35px;
+    padding: 8px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border: 1px solid gray;
+    outline: none;
+    background-color: #0f0f0f;
+    color: white;
+}
+#s_icon{
+    width: 65px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border: 1px solid gray;
+}
+#mike_icon{
+    margin-left: 20px;
+}
+/* Right Icons */
+#right_part {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    /* border: 1px solid red; */
+    padding-right: 20px;
+    gap: 15px;
+}
+/* profile part part */
+#create_cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ----bottom part---- */
+#main_cont_with_filter{
+    width: 100%;
+    /* height: 560px; */
+    height: auto;
+}
+.ifram_con{
+    border-radius: 15px;
+    height: 560px;
+}
+#bottom_part{
+    display: flex;
+    height: 99%;
+    max-width: 95%;
+    border: 1px solid white;
+    margin: 20px 50px;
+    overflow-y: scroll;
+}
+
+/* left side  */
+
+#left_full_cont{
+    width: 70%;
+    height: 100%;
+}
+
+
+/* Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Title Section */
+  .title_section {
+    /* Add styling as needed */
+  }
+  
+  /* Info + Buttons Section */
+  .info_buttons_section {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  /* Channel Info */
+  .channel_info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+  }
+  
+  .channel_icon {
+    width: 40px;
+    height: 40px;
+    background: #444;
+    border-radius: 50%;
+  }
+  
+  .subscribe_btn {
+    background: #fff;
+    color: #000;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  /* Action Buttons */
+  .action_buttons {
+    display: flex;
+    gap: 10px;
+    padding: 5px;
+  }
+  
+  .action_buttons button {
+    background: #222;
+    color: #fff;
+    border: 1px solid #666;
+    padding: 6px 12px;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .thumb_icon,
+  .icon {
+    font-size: 16px;
+  }
+  
+  .like_count,
+  .label {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  /* Video Description Section */
+  .video_description {
+    display: flex;
+    height: 100px;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #444;
+    border-radius: 15px;
+    padding: 8px;
+    margin: 5px 10px;
+  }
+  
+  .video_stats {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .social {
+    /* Add styling if needed */
+  }
+
+
+
+
+
+
+
+
+
+/* --------rights side ---- */
+#right_menu {
+    width: 30%;
+    height: 100%;
+    padding-right: 8px;
+    margin-left: 10px;
+    
+}
+
+.card_const_class {
+    display: grid;
+    grid-template-columns: 40% 52% 3%;
+    gap: 8px;
+    padding: 10px 0;
+    border-bottom: 1px solid #2c2c2c;
+    align-items: start;
+}
+
+.img_cont_left {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.imgs {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    
+}
+
+.time_vd {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    padding: 2px 5px;
+    font-size: 10px;
+    background-color: rgba(34, 34, 34, 0.8);
+    color: #fff;
+    border-radius: 4px;
+}
+
+.txt_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.title {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.channel_name {
+    font-size: 12px;
+    color: #aaa;
+    margin: 4px 0;
+}
+
+.views_ago_cont {
+    display: flex;
+    gap: 4px;
+    font-size: 11px;
+    color: #888;
+}
+
+/*  */

@@ -1,0 +1,318 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #0f0f0f;
+    color: whitesmoke;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+#main_grid {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 61px auto;
+}
+
+/* --------- Top Navigation --------- */
+#top_part {
+    width: 100%;
+    height: 61px;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    background-color: #181818;
+    border-bottom: 1px solid #222;
+    /* border: 1px solid red; */
+}
+#logo_cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Logo Section */
+#logo {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 10px;
+}
+
+#logo img {
+    margin-left: 15px;
+    width: 40px;
+    height: auto;
+    box-sizing: border-box;
+}
+
+#logoText {
+    margin-left: 5px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Search + Right Part */
+#top_nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    
+}
+
+/* Center Search */
+#center_part {
+    height: 100%;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    /* border: 1px solid red; */
+}
+
+#search {
+    width: 530px;
+    height: 35px;
+    padding: 8px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border: 1px solid gray;
+    outline: none;
+    background-color: #0f0f0f;
+    color: white;
+}
+#s_icon{
+    width: 65px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border: 1px solid gray;
+}
+#mike_icon{
+    margin-left: 20px;
+}
+/* Right Icons */
+#right_part {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    /* border: 1px solid red; */
+    padding-right: 20px;
+    gap: 15px;
+}
+/* profile part part */
+#create_cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --------- Bottom Section --------- */
+#bottom_part {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 250px 1fr ;
+    /* border: 1px solid purple; */
+    /* transition: grid-template-columns 0.3s ease; */
+}
+
+/* Sidebar */
+#left_menu {
+    width: 250px;
+    background-color: #181818;
+    padding: 10px;
+    border-right: 1px solid #222;
+    /* transition: width 0.3s ease; */
+}
+
+
+/* Main Content */
+#main_cont_with_filter {
+    background-color: #0f0f0f;
+    padding: 20px;
+}
+
+/* .shrink + #main_cont_with_filter {
+    /* transition: margin-left 0.3s ease; 
+} */
+.flex_column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 5px;
+    font-size: 12px;
+}
+
+/* filter */
+#main_cont_with_filter {
+    background-color: #0f0f0f;
+    padding: 10px;
+}
+#filter{
+    height: 35px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.filter-btn{
+    background: #222;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    margin-right: 3px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+   
+}
+.filter-btn:hover, .filter-btn.active {
+    background: #fff;
+    color:#000;
+}
+/*-------------- main_body_cont--------------- */
+
+/* Sidebar Shrink Effect */
+.shrink {
+    width: 90px !important;
+}
+#main_body_container{
+    width: calc(100%-20px);
+    height: 86vh;
+    overflow-y: scroll;
+    /* border: 1px solid white; */
+    display: grid;
+    padding-right: 10px;
+
+}
+.video_card{
+    background-color: #181818;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 15px;
+
+}
+.video_id{
+    display: none;
+    /* display: hidden; */
+}
+.video_thumbnail_div{
+    width: 100%;
+    height: 70%;
+    border-radius: 15px;
+    position: relative;
+}
+.video_thumbnail{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    border-radius: 15px;
+}
+.video_time{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(25, 25, 25, 0.5);
+    color: whitesmoke;
+    font-size: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    /* opacity: 0.5; */
+}
+
+/* bottom part of video card */
+.bottom_part_in{
+    margin-top: 10px;
+    /* border: 1px solid purple; */
+    width: 100%;
+    height: 25%;
+    display: grid;
+    grid-template-columns: 35px 1fr 20px;
+    grid-template-rows: 100%;
+    column-gap: 10px;
+}
+.left_part{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-column: 1 / 2 ;  
+    grid-row: 1 / 2;
+
+}
+.right_part{
+    /* border: 1px solid yellow; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-column: 2 / 3 ; 
+    grid-row: 1 / 2;
+
+}
+.dot_cont div{
+    /* border: 5px solid purple; */
+    text-align: center;
+    width: 10px;
+    height: 10px;
+}
+
+.channel_logo_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px; /* or 100% same y paret is 35% */
+    height: 35px;
+}
+.channel_logo{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.video_channel {
+    margin-bottom: 2px;
+    
+    font-size: 90%;
+    color: #aaa;
+}
+.video_title {
+    /* this will work anywhere */
+    align-content: center;
+    min-height: 39px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 4px;
+
+    /* this is used for ... when supported */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    /* line-clamp:inherit; it was giving worning that why i have to use it*/ 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.video_Views_PublishedAtCount{
+    display: flex;
+    width: 80%;
+}
+.video_views{
+    font-size: 75%;
+    color: #aaa;
+}
+.video_publishedAt{
+    font-size: 75%;
+    color: #aaa;
+}
