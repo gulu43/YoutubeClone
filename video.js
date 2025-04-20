@@ -153,7 +153,7 @@ async function getVideoDetails(videoId) {
     const videoData = await videoRes.json();
     const video = videoData.items[0];
 
-    const channelId = video.snippet.channelId;
+    const channelId = video.snippet.channelId  ;
 
     const channelParams = new URLSearchParams({
         key: KEY,
