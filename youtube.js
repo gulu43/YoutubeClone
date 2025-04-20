@@ -39,12 +39,19 @@ let generateQueryParam = new URLSearchParams({
 });
 
 async function channel_logo_api() {
+    const channel_Id = [];
+
     let link = await fetch(video_https + generateQueryParam);
     let data = await link.json();
     data.items.forEach((e) => {
         // console.log(e.snippet.channelId);
         channel_Id.push(e.snippet.channelId);
     })
+
+    if (!channel_Id.length) {
+        console.warn("channel_Id array is empty. Skipping channel logo API.");
+        return;
+    }
 
     const channel_https = "https://www.googleapis.com/youtube/v3/channels?";
     let generateQueryParam_for_channel = new URLSearchParams({
@@ -55,7 +62,11 @@ async function channel_logo_api() {
 
     let link_channel = await fetch(channel_https + generateQueryParam_for_channel);
     let channel_data = await link_channel.json();
-    console.log(channel_data);
+    
+    if (!channel_data.items) {
+        console.error("No channel data returned:", channel_data);
+        return;
+    }
 
     channel_data.items.forEach((e) => {
         channel_logo[e.id] = e.snippet.thumbnails.default.url;
