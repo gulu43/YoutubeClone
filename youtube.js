@@ -12,11 +12,13 @@ leftMenuBtn.addEventListener('click', () => {
     if (leftMenu.classList.contains('shrink')) {
         bottomPart.style.gridTemplateColumns = "90px 1fr"; // Sidebar shrinks
         // otheers code 4 videos
+        left_menubar_3();
         fun_four_video();
 
     } else {
         bottomPart.style.gridTemplateColumns = "250px 1fr"; // Sidebar expands
         // other code 3 videos
+        left_menu_big_4();
         fun_three_video();
     }
 });
@@ -176,6 +178,88 @@ function timeAgo(dateString) {
     }
     return "Just now";
 
+}
+
+// leftmenu bar
+
+function left_menubar_3() {
+    
+    let left_menu_var = document.querySelector('#left_menu');
+    left_menu_var.innerHTML="";
+    left_menu_var.classList.toggle('left_menu_class');
+    left_menu_var.innerHTML=`
+        <div class="home_div flex_column_class "  >
+            <span class="material-symbols-outlined">home</span>
+            <div class="stxt">Home</div>
+        </div>
+
+         <div class="home_div flex_column_class "  >
+            <span class="material-symbols-outlined">play_arrow</span>
+            <div class="stxt">Shorts</div>
+         </div>
+
+        <div class="home_div flex_column_class "  >
+            <span class="material-symbols-outlined">subscriptions</span>
+            <div class="stxt">Subscriptions</div>
+        </div>
+
+        <div class="home_div flex_column_class "  >
+            <span class="material-symbols-outlined">account_circle</span>
+            <div class="stxt">You</div>
+        </div>   
+    `
+    // bottom_partVar.appendChild(left_menu_var);
+}
+
+function left_menu_big_4() {
+    let left_menu_var = document.querySelector('#left_menu');
+    left_menu_var.innerHTML="";
+    left_menu_var.classList.toggle('four_class');
+    left_menu_var.innerHTML=`
+         <div id="left_menu_home_comp" class="cont_left_menu selected" >
+                    <div class="material-symbols-outlined icon">home</div> <div class="txt">Home</div>
+                </div>
+                <div  class="cont_left_menu" >
+                    <div class="material-symbols-outlined icon">play_arrow</div> <div class="txt">shorts</div>
+                </div>
+                <div  class="cont_left_menu" >
+                    <div class="material-symbols-outlined icon">subscriptions</div> <div class="txt">Subscriptions</div>
+                </div>
+
+                <hr class="line">
+
+                <div style="margin-bottom: 15px;">
+                    <span style="font-size: 16px;"> You</span> <span style="padding-left: 10px;">></span>
+                </div>
+
+                <div  class="cont_left_menu" >
+                    <div class="material-symbols-outlined icon">history</div> <div class="txt">History</div>
+                </div>
+
+                <div  class="cont_left_menu" >
+                    <div class="material-symbols-outlined icon">format_list_bulleted_add</div> <div class="txt">Playlists</div>
+                </div>
+
+                <div  class="cont_left_menu" >
+                    <div class="material-symbols-outlined icon">smart_display</div> <div class="txt">Your videos</div>
+                </div>
+
+                <div  class="cont_left_menu" >
+                    <div class="material-symbols-outlined icon">school</div> <div class="txt">Your courses</div>
+                </div>
+
+                <div  class="cont_left_menu" >
+                    <div class="material-symbols-outlined icon">history_toggle_off</div> <div class="txt">Watch later</div>
+                </div>
+
+                <div  class="cont_left_menu" >
+                    <div class="material-symbols-outlined icon">thumb_up</div> <div class="txt">liked videos</div>
+                </div>
+
+                <div  class="cont_left_menu" >
+                    <div class="material-symbols-outlined icon">content_cut</div> <div class="txt">Your clips</div>
+                </div>
+    `;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
