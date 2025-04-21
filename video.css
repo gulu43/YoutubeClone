@@ -132,7 +132,7 @@ html, body {
     display: flex;
     height: 99%;
     max-width: 95%;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     margin: 20px 50px;
     overflow-y: scroll;
 }
@@ -195,7 +195,34 @@ html, body {
     gap: 10px;
     padding: 5px;
   }
-  
+  .line{
+    align-self: center;
+    height: 65%;
+  }
+  .buttons_like_and_dis{
+    display: flex;
+    flex-direction: row;border: 1px solid gray;
+    border-radius: 50px;
+    background-color: #222222;
+  }
+  .like_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 10px;    */
+  }
+  .dislike_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .pad{
+    padding: 0px 10px;
+  }
+  .pr{
+    padding-right: 10px;
+  }
   .action_buttons button {
     background: #222;
     color: #fff;
@@ -223,13 +250,17 @@ html, body {
   /* Video Description Section */
   .video_description {
     display: flex;
-    height: 100px;
+    max-height: 100px;
     flex-direction: column;
     gap: 10px;
     background-color: #444;
     border-radius: 15px;
     padding: 8px;
     margin: 5px 10px;
+    overflow: hidden;   
+  }
+  .video_description.full{
+    max-height: 1000px; 
   }
   
   .video_stats {
@@ -239,6 +270,8 @@ html, body {
   
   .social {
     /* Add styling if needed */
+    
+    
   }
 
 
@@ -324,4 +357,47 @@ html, body {
     color: #888;
 }
 
-/*  */
+/*  comments */
+.comment {
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    margin: 15px 10px;
+  }
+
+  .comment {
+    font-size: 18px;
+    margin-right: 4px;
+  }
+
+  .box {
+    display: flex;
+    align-items: flex-start;
+    margin: 0 10px;
+  }
+
+  .user {
+    width: 40px;
+    height: 40px;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-weight: bold; */
+  }
+
+  input {
+    flex: 1;
+    margin-left: 15px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #555;
+    color: #fff;
+    padding: 8px 0;
+    font-size: 14px;
+  }
+
+  input::placeholder {
+    color: #aaa;
+  }
+  

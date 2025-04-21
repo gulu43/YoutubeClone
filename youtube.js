@@ -24,7 +24,7 @@ leftMenuBtn.addEventListener('click', () => {
 });
 
 let videoCardContainer = document.getElementById("main_body_container");
-let total_video_call = 21;
+let total_video_call = 9;
 
 let channel_Id = [];
 let channel_logo = {};
@@ -39,6 +39,7 @@ let generateQueryParam = new URLSearchParams({
 });
 
 async function channel_logo_api() {
+    
     const channel_Id = [];  
 
     let link = await fetch(video_https + generateQueryParam);
@@ -149,18 +150,28 @@ async function search_fn(searchString) {
 async function video_creater_fn(videoCardContainer, vData) {
     videoCardContainer.innerHTML = "";
     if (trigger === 0) {
-        await channel_logo_api();
+        await channel_logo_api();   
+        
     }else{
         await search_fn(searchVar.value);
     }
     
+    if (!vData || !vData.items) {
+        console.error("API Error or quota exceeded", vData);
+        return;
+    }
+
     vData.items.forEach((e) => {
         let videoCard = document.createElement("div");
         videoCard.classList.add("video_card");
+
+        // Determine correct video ID for both search and regular results
+        let videoId = e.id?.videoId || e.id;
+
         // getting currect logo 
         let current_id = e.snippet.channelId;
         videoCard.innerHTML = `
-            <div class="video_id">${e.id.videoId}</div>
+            <div class="video_id">${videoId }</div> 
             <div class="video_thumbnail_div"><img class="video_thumbnail" src="${e.snippet.thumbnails.medium.url}" alt="Thumbnail"> 
             <div class="video_time"> ${convertDuration(e.contentDetails?.duration || 'empty')}</div> </div>
             <div class="bottom_part_in">

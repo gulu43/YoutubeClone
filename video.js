@@ -95,25 +95,28 @@ async function discription() {
 
     cont_var.innerHTML = `
         <div class="title_section">
-            <h1>${data.title}</h1>
+            <h3>${data.title}</h3>
         </div>
         <div class="info_buttons_section">
             <div class="channel_info">
                 <img class="channel_icon" src="${data.channelLogo}" />
                 <div class="channel_name">
                     <div>${data.channelName}</div>
-                    <div>${data.subscribers} subscribers</div>
+                    <div>${formatSubscribers(data.subscribers)} subscribers</div>
                 </div>
                 <button class="subscribe_btn">Subscribe</button>
             </div>
             <div class="action_buttons">
-                <button class="like_button">
-                    <div class="thumb_icon material-symbols-outlined">thumb_up</div>
-                    <div class="like_count">${data.likes}</div>
-                </button>
-                <button class="dislike_button">
-                    <div class="icon">thumb_down</div>
-                </button>
+                <div class="buttons_like_and_dis">
+                    <div class="like_button" >
+                        <div class="thumb_icon material-symbols-outlined pad">thumb_up</div>
+                        <div class="like_count pr">${formatLikes(data.likes)}</div>
+                    </div>
+                    <hr class="line">
+                    <div class=" dislike_button">
+                        <div class="icon thumb_icon material-symbols-outlined pad">thumb_down</div>
+                    </div>
+                </div>
                 <button class="share_button">
                     <div class="icon material-symbols-outlined">share</div>
                     <div class="label">Share</div>
@@ -129,8 +132,8 @@ async function discription() {
         </div>
         <div class="video_description">
             <div class="video_stats">
-                <div>${data.views} views</div>
-                <div>${data.uploadDate}</div>
+                <div>${formatViews(data.views)} views</div>
+                <div>${timeAgo(data.uploadDate)}</div>
             </div>
             <div class="social">
                 <div>${data.description}</div>
@@ -176,6 +179,29 @@ async function getVideoDetails(videoId) {
         subscribers: channel.statistics.subscriberCount
     };
 }   
+
+//click on discription
+window.addEventListener('click',(e)=>{
+    const parent = e.target.closest('.video_description');
+  if (parent) {
+    parent.classList.toggle('full');
+  }
+})
+
+
+// subscriber count
+function formatSubscribers(subs) {
+    if (subs >= 1_000_000) return (subs / 1_000_000).toFixed(1) + "M subscribers";
+    if (subs >= 1_000) return (subs / 1_000).toFixed(1) + "K subscribers";
+    return subs + " subscribers";
+}
+
+// likes
+function formatLikes(likes) {
+    if (likes >= 1_000_000) return (likes / 1_000_000).toFixed(1) + "M";
+    if (likes >= 1_000) return (likes / 1_000).toFixed(1) + "K";
+    return likes + "";
+}
 
 
 // fun duretion
